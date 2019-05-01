@@ -42,19 +42,6 @@ class Game extends Component {
       this.setState({currentSpell: spell})
     }
 
-    fetchData = () => {
-      axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-      .then((response) => {
-        // handle success
-        console.log(response.data) // The entire response from the Rails API
-
-        console.log(response.data.message) // Just the message
-        this.setState({
-          message: response.data.message
-        });
-      })
-    }
-
     render() {
       const { spells, notifications, myCharacter, opponentCharacter, currentSpell } =  this.state
       return (
@@ -73,13 +60,14 @@ class Game extends Component {
               Cast Spell
           </button>
 
-          <div>
+          {/* Old code for testing if front-end was receiving data from DB */}
+          {/* <div>
             <h1>{ this.state.message }</h1>
             <button onClick={this.fetchData} >
               Fetch Data
             </button>
-          </div>
-        </div>
+          </div>*/}
+        </div> 
 
       );
     }
