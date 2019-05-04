@@ -58,6 +58,16 @@ class App extends Component {
     return axios.get('/api/wizards')
   }
 
+  endGame = (user) => {
+    return axios.post('/api/endgame', {user: user})
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
+
   fetchData = () => {
     return Promise.all([this.fetchWizards(), this.fetchSpells()]);
   }
@@ -68,7 +78,7 @@ class App extends Component {
         <div>
           <Navigation />
           <Route exact path='/'render={(props) => <Login {...props} newUser={this.newUser} state={this.state} loadDb={this.fetchData}/>} />
-          <Route path='/game'render={(props) => <Game {...props} chooseSpell={this.chooseSpell} newNotification={this.newNotification} state={this.state}/>}/>
+          <Route path='/game'render={(props) => <Game {...props} chooseSpell={this.chooseSpell} newNotification={this.newNotification} state={this.state} endGame={this.endGame}/>}/>
           <Route path='/instructions' component={Instructions}/>
           <Route path='/setup'render={(props) => <Setup {...props} state={this.state} chooseWizard={this.chooseWizard}/>}/>
           <Route path='/spell_setup' render={(props) => <SpellSetup {...props} state={this.state} setPlayerOptions={this.setPlayerOptions}/>}/>

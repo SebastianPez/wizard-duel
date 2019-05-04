@@ -41,6 +41,7 @@ class Game extends Component {
 
   endGame = () => {
     this.setState({ gameOver: true });
+    // this.props.endGame(user);
   }
 
   choosePosition = (e) => {
