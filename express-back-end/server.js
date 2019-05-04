@@ -32,6 +32,10 @@ App.get('/api/spells', (req, res) => {
   .then(thespells => response(thespells));
 });
 
+App.post('/api/endgame', (req, res) => {
+  knex(users).where({ username: req.body.user.name }).update({ experience: (req.body.user.exp + 100)});
+})
+
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`Express seems to be listening on port ${PORT} so that's pretty good 👍`);
