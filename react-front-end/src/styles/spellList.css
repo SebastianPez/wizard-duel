@@ -1,18 +1,33 @@
 .spellsTable {
-    border: 1px solid black;
-    background: white;
-}
-
-#mainTable {
-    height: 230px;
-    width: 550px;
-    border-collapse: collapse;
+    display: flex;
+    flex-wrap:wrap;
+    color: white;
+    columns: 3;
+    height: 100px;
+    width: auto;
+    overflow-y: scroll;
 }
 
 .spellChoiceBtn {
-    height: 30px;
-    width: 75px;
-    background-color: darkblue;
-    color: white;
-    font-size: 20px;
+    flex-wrap: wrap;
+    height: 90px;
+    width: 300px;
+    background-color: rgb(28, 189, 28);
+    border-radius: 50%;
+    font-size: 1.5em;
+    text-align: center;
+    padding:0 10px;
+    margin-right:8%;
+    font-weight:bold;
 }
+
+.spellName{
+    font-size: 24px;
+}
+
+div.radio-pillbox{
+    width:25;
+    position:right;
+    padding:0;
+}
+

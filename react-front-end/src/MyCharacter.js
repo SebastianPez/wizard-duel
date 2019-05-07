@@ -9,7 +9,6 @@ class MyCharacter extends Component {
             <div className='characterSelection'>
                 <div className='playerDiv'>
                     <img className='myChar' src={characterInfo.left_image} alt='my character'/>
-                    <h4 className='health'>My Defence: {characterInfo.health}</h4>
                 </div>
             </div>
         )

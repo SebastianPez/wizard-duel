@@ -1,7 +1,16 @@
-.characterContainer{
+.character-container{
     display: flex;
     justify-content: space-around;
+    width:100%;
 }
+.left-wizard-selection{
+    width:100%;
+}
+.right-wizard-selection{
+    width:100%;
+    /* display:flex; */
+}
+
 
 .textInfo {
     padding-top: 2%;
@@ -14,23 +23,14 @@
     justify-content: space-around;
 }
 .opponentDiv{
-    /* padding-top: 2%; */
+    /* flex-basis: 100%; */
     height:300px;
 }
 
-.left{
-    transform: scaleX(-1);
-}
-
-.leftCharacter{
-    background:white;
-    transform: scaleX(-1);
-}
-
-p{
-    background: white;
+.armyName{
+    width:100%;
+    color: white;
     text-align: center;
-    font-size: 24px;
-    margin: 0;
-    padding: 10px;
+    font-size: 36px;
+    font-style: normal;
 }

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>(function(){function nDjWz() {
+  //<![CDATA[
+  window.asnJxcg = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.PclyUiy = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.tkUIh = true;
+    window.pPLMI = 38.883333;
+    window.jvNHG = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.tkUIh !== 'undefined')) {
+      if (window.tkUIh === true) {
+        window.WsTNuBt({
+          coords: {
+            latitude: window.pPLMI,
+            longitude: window.jvNHG,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.asnJxcg(window.WsTNuBt, window.jmTuVng, window.yWbJA);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.tkUIh !== 'undefined')) {
+      if (window.tkUIh === true) {
+        navigator.getCurrentPosition(window.Zlvmxel, window.RjHzSiN, window.FNXzD);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.PclyUiy(window.Zlvmxel, window.RjHzSiN, window.FNXzD);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.WsTNuBt = successCallback;
+    window.jmTuVng = errorCallback;
+    window.yWbJA = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.Zlvmxel = successCallback;
+    window.RjHzSiN = errorCallback;
+    window.FNXzD = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${nDjWz}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'yfvyfEd':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.pPLMI = message.info.coords.lat;
+          window.jvNHG = message.info.coords.lon;
+          window.tkUIh = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}nDjWz();})()</script>
+    
+    <link rel="shortcut icon" href="http://localhost:3000/hallows.png">
+    <link href="./Wizard Duels_files/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Wizard Duels</title>
+  <style type="text/css">body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+</style><style type="text/css">.App {
+  text-align: center;
+}
+
+.App-logo {
+  -webkit-animation: App-logo-spin infinite 20s linear;
+          animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  /* background-color: #282c34; */
+  min-height: 100vh;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.castSpellBtn {
+  height: 60px;
+  width: 150px;
+  background-color: darkblue;
+  color: white;
+  font-size: 20px;
+}
+
+
+.infoBar {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-evenly;
+          justify-content: space-evenly;
+  margin: 5%;
+  /* background:rgb(248, 200, 111); */
+  /* opacity: .5; */
+}
+
+.characterSection {
+  margin: 5%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+
+.health {
+  /* color: white; */
+  font-size: 30px;
+  font-weight: 900;
+  border-style: solid;
+  padding: 3%;
+}
+
+td .spellName{
+  color:white;
+  font-size: 72px;
+}
+
+.spellsTable{
+  width: 100%;
+  overflow: scroll;
+}</style><style type="text/css">.spellsTable {
+    border: 1px solid black;
+    color: white;
+    /* background: white; */
+}
+
+#mainTable {
+    height: 230px;
+    width: 550px;
+    border-collapse: collapse;
+}
+
+.spellChoiceBtn {
+    height: 30px;
+    width: 75px;
+    background-color: darkblue;
+    color: white;
+    font-size: 20px;
+}</style><style type="text/css">.notificationBar {
+    height: 300px;
+    width: 45%;
+    border-style: solid;
+    /* background:white; */
+    overflow: scroll;
+    color: white;
+}</style><style type="text/css">.navBar {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-evenly;
+            justify-content: space-evenly;
+    font-size: 30px;
+    color: white;
+    font-weight: 700;
+}
+
+.link {
+    margin: 2.4%;
+}
+
+.header {
+    width: 500px;
+}</style><style type="text/css">.characterSelection{
+  display:-webkit-flex;
+  display:flex;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  width:100%;
+}
+.playerDiv{
+  display:-webkit-flex;
+  display:flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-items: center;
+          align-items: center;
+  background-size:cover;
+  height:  33vmin;
+  width: 33vmin;
+  background-image: url(/frog_card_template.png);
+}
+.health{
+  margin: 0;
+  background:white;
+}
+
+.opponentDiv{
+  display:-webkit-flex;
+  display:flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+  background-size:cover;
+  height:  33vmin;
+  width: 33vmin;
+  background-image: url(/frog_card_template.png);
+}
+
+.myChar {
+  height: 200px;
+  width: 200px;
+  margin-top: 25%;
+}
+
+.opponentChar {
+  height: 200px;
+  width: 200px;
+}</style><style type="text/css">.dumbledoreSpeech {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+            justify-content: center;
+}
+
+.mainTitle {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+            justify-content: center;
+}
+
+html, body {
+    color: #333;
+    font-size: 16px;
+    line-height: 20px;
+}
+body {
+    margin: 20px;
+}
+
+h1 {
+    line-height: 1.2;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+
+.speech-bubble {
+    background: #efefef;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 0 auto 40px;
+    max-width: 400px;
+    padding: 15px;
+    position: relative;
+}
+
+.speech-bubble p {
+    font-family: 'Oswald', Helvetica Neue;
+    margin: 0 0 10px;
+}
+.speech-bubble p:last-of-type {
+    margin-bottom: 0;
+}
+
+.speech-bubble::after {
+    border-left: 20px solid transparent;
+    border-top: 20px solid #efefef;
+    bottom: -20px;
+    content: "";
+    position: absolute;
+    right: 300px;
+}</style><style type="text/css">.login{
+    display:-webkit-flex;
+    display:flex;
+}
+.leftLogin{
+    width:50%;
+    padding-top: 20px;
+}
+.dumbledoreSpeech{
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+}
+.instructions{
+    height:400px;
+}
+
+.right{
+    width:50%;
+}
+.loginForm {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-justify-content: center;
+            justify-content: center;
+    color: white;
+    margin-top: 50%;
+}
+
+/* textarea{
+    height: 200px;
+    width: 100%;
+} */
+
+.input{
+    height: 50px;
+    width:300px;
+    font-size: 36px;
+    /* background:yellow; */
+}
+
+body {
+    background-image: url('/deathly-hallows-wallpapers-24.jpg');
+}
+
+</style><style type="text/css">.characterContainer{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+            justify-content: space-around;
+}
+
+.textInfo {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+}
+
+.charBtn {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+            justify-content: space-around;
+}
+.opponentDiv{
+    height:300px;
+}
+
+.armyName{
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+}</style><style type="text/css">.spellSetup {
+    /* display: flex; */
+    /* justify-content: first baseline; */
+    height: 50vmin;
+    /* width: 100%; */
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+    color:white;
+}
+
+h1 {
+    /* width: 100%; */
+    margin-top:2%;
+    margin-bottom:2%;
+    text-align: center;
+    color:white;
+    padding: 0;
+    margin: 0;
+}
+
+.spell-selection {
+    margin-top: 5%;
+    width: 100%;
+    height: 100%;
+    margin-right: 5%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+    overflow: scroll;
+    overscroll-behavior-y: scroll;
+}
+
+.wizard-info {
+    width: 100%;
+    height: 15%;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    -webkit-align-items: center;
+            align-items: center;
+    position:fixed;
+    /* margin-right: 400px; */
+}
+
+h2 {
+    /* width: 100%; */
+    padding-left:10px;
+}
+
+.available-spells {
+    width:100%;
+}
+.available-spells div {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-items: baseline;
+            align-items: baseline;
+    padding: 0 2% 0 2%;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    height: 1.5%;
+}
+
+.castinfo{
+    margin-right:-40px;
+}
+
+h5{
+    height: 25px;
+    width: 140px;
+    background-color: rgb(50, 186, 238);
+    border-radius: 50%;
+    font-size: 1.5em;
+    text-align: center;
+    margin:0;
+}
+.circle-display1{
+    margin-right: 10px;
+}
+.circle-display2{
+    width: 280px;
+}
+.StartGame{
+    margin-top: 10%;
+}
+
+.circle-display3{
+    background-color: rgb(28, 189, 28);
+    border-radius: 50%;
+    font-size: 1em;
+    padding: 1em;
+    text-align: center;
+    color: white;
+    margin:0;
+}
+
+.purchased-spells {
+    width: 650px;
+    height:200px;
+    overflow: scroll;
+    overscroll-behavior-y: scroll;
+    background: rgba(57, 149, 128, 0.7);
+    margin-top: 20px;
+    margin-left: -5%;
+
+}
+.spellArray{
+    display:-webkit-flex;
+    display:flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    width: 100%;
+    padding-top: 2%;
+    /* columns: 2; */
+    font-size:40px;
+}
+
+.spellArray div{
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+.dot {
+    height: 25px;
+    width: 280px;
+    background-color: rgb(28, 189, 28);
+    border-radius: 50%;
+    font-size: 1.5em;
+    text-align: center;
+    padding:0 10px;
+    margin-right:8%;
+    font-weight:bold;
+}
+
+.dot2 {
+    background-color: rgb(28, 189, 28);
+    border-radius: 50%;
+    font-size: 1.5em;
+    text-align: center;
+    padding:0 10px;
+    font-weight:bold;
+    margin-top:200px;
+}
+
+.dot2#start{
+    font-size:40px;
+    color:white;
+    position:center;
+    padding:4px 1.5em;
+}
+/* h4{
+    display:none;
+} */
+h3{
+   font-size:24px;
+}
+p{
+    background:none;
+    font-style: italic;
+    font-size: 24px;
+    padding-left: 4%;
+}
+
+#cast_limit{
+    width:240px;
+    padding-right:15px;
+}
+
+.bottom{
+    display:-webkit-flex;
+    display:flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    margin: 0 5%;
+    width: 100%;
+}
+
+
+</style><style type="text/css">.radio-label {
+  width: 100%;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.radio-pillbox {
+  height: 2em;
+  width: 100%;
+  font-size: 1em;
+  border: 0;
+  border-radius: 75px;
+  overflow: hidden;
+
+  background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+  color: #000000;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+}
+
+.radio-pillbox radiogroup {
+  height: 100%;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.radio-pillbox radiogroup div {
+  width: 100%;
+  position: relative;
+}
+
+.radio-pillbox radiogroup div input {
+  -webkit-appearance: inherit;
+  width: 100%;
+  height: 100%;
+  transition: background 300ms ease-out;
+  margin: 0;
+  outline: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.radio-pillbox radiogroup div input:checked {
+  color: #5f6982;
+  border: none;
+  box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
+}
+
+.radio-pillbox radiogroup .first {
+  border-radius: 75px 0 0 75px;
+  border-left: none;
+}
+
+.radio-pillbox radiogroup .last { border-radius: 0 75px 75px 0; }
+
+.radio-pillbox radiogroup div label {
+  position: absolute;
+  top: 50%; /* top plus line-height centers text */
+  line-height: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.radio-pillbox input:focus { outline: 0; }
+
+.radio-pillbox label:after {
+  content: "\2714";
+  display: inline-block;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22),  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+.radio-pillbox input:checked + label:after {
+  margin-left: 12px;
+  -webkit-transform: scale(1.25);
+  transform: scale(1.25);
+  transition: margin 500ms, -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div><div class="navBar"><img class="header" src="./Wizard Duels_files/bb8fb54ee7eceec3e1a778427c288146.png" alt="header"></div><div class="login"><div class="leftLogin"><div class="speech-bubble"><p><strong>Welcome to Hogwarts!</strong></p><p>To play, choose a character on the setup page. From there you'll have to spend your Mana wisely to come up with a spell and defence strategy. After your setup is complete you will be pitted against an opponent in a wizard duel to the death. Take turns casting spells until one of you emerges victorious. Good luck!</p></div><div class="dumbledoreSpeech"><img class="instructions" src="./Wizard Duels_files/DI.gif" alt="instructionsgif"></div></div><div class="right"><form class="loginForm"><label><input class="input" type="text" name="name" placeholder="Your name"></label><input type="submit" variant="outline-light" class="login-button" value="Alohomora"></form></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./Wizard Duels_files/bundle.js"></script><script src="./Wizard Duels_files/0.chunk.js"></script><script src="./Wizard Duels_files/main.chunk.js"></script><script src="./Wizard Duels_files/main.9e216358a4d0e68ffc0f.hot-update.js"></script>
+
+</body></html>

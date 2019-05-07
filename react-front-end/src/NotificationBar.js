@@ -11,7 +11,6 @@ class NotificationBar extends Component {
                 <div>
                     <Notification
                         message={msg}
-                        key={Math.random() * 10000000}
                     />
                 </div>
             )

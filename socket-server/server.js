@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
-let numberOfClients = 0;
+let numberOfClients = io.engine.clientsCount;
 let character; //to send the first user the opponents character
 
 io.on("connection", socket => {
@@ -43,7 +43,9 @@ io.on("connection", socket => {
 
     socket.on('disconnect', function() {
         numberOfClients --;
+        socket.broadcast.emit('disconnected')
         console.log('Number of online clients:', numberOfClients)
+        socket.broadcast.emit('disconnected')
     })
 });
 
