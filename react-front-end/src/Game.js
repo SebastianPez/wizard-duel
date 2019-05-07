@@ -151,7 +151,6 @@ class Game extends Component {
               </div>
             </radiogroup>
           </div>
-          <button onClick={this.endGame}>End</button>
         <h1>{this.state.gameOver ?<NavLink to='/setup'>GAME OVER!! Click to play again!</NavLink>: ""}</h1>
           <div className='infoBar'>
             < PlayerSpellList chooseSpell={this.chooseSpell} userSpells={this.props.state.mySpells}
