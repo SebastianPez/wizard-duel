@@ -31,7 +31,7 @@ class Setup extends Component {
         return (
             this.props.state.myCharacter ? (<Redirect to="/spell_setup"/>) :
             <React.Fragment>
-                <h1 className='textInfo'> {this.props.state.currentUser} choose your army!!!</h1>
+                <h1 className='textInfo'> {this.props.state.currentUser.username} choose your army!!!</h1>
                 <div className='character-container'>
                     <div className='left-wizard-selection'>
                         <div className='left-wizard-selection' onClick={() => this.props.chooseWizard(this.lightWizardObj)}>

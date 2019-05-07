@@ -41,6 +41,7 @@ class Game extends Component {
 
   endGame = () => {
     this.setState({ gameOver: true });
+    this.props.endGame(this.props.state.currentUser)
   }
 
   choosePosition = (e) => {
@@ -100,7 +101,7 @@ class Game extends Component {
         this.socket.emit('attack', JSON.stringify(this.state));
       }
       // this.updateTurn();
-      this.socket.emit('notification', JSON.stringify({ notification: { user: this.props.state.currentUser, spell: this.state.currentSpell}}));
+      this.socket.emit('notification', JSON.stringify({ notification: { user: this.props.state.currentUser.username, spell: this.state.currentSpell}}));
     }
   }
 
@@ -150,6 +151,7 @@ class Game extends Component {
               </div>
             </radiogroup>
           </div>
+          <button onClick={this.endGame}>End</button>
         <h1>{this.state.gameOver ?<NavLink to='/setup'>GAME OVER!! Click to play again!</NavLink>: ""}</h1>
           <div className='infoBar'>
             < PlayerSpellList chooseSpell={this.chooseSpell} userSpells={this.props.state.mySpells}
