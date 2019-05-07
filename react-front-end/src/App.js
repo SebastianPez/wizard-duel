@@ -59,13 +59,14 @@ class App extends Component {
   }
 
   endGame = (user) => {
-    return axios.post('/api/endgame', {user: user})
-    .then(function(response) {
-      console.log(response);
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
+    console.log(user);
+    axios({
+      method: "post",
+      url: "/api/endgame",
+      params: {
+          username: user
+      }
+  });
   }
 
   fetchData = () => {

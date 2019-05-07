@@ -41,7 +41,7 @@ class Game extends Component {
 
   endGame = () => {
     this.setState({ gameOver: true });
-    // this.props.endGame(user);
+    this.props.endGame(this.props.state.currentUser);
   }
 
   choosePosition = (e) => {
@@ -75,6 +75,7 @@ class Game extends Component {
       if (this.state.myDefence <= 0) {
         this.setState({ gameOver: true });
         this.socket.emit('gameOver');
+        // Add logic for loser to gain exp as well.
         console.log('YOU LOST!');
       }
       this.takeDamage(currentSpell.power);
@@ -125,6 +126,9 @@ class Game extends Component {
               Cast Spell
           </button>
           <h1>{this.state.myDefence}</h1>
+          <div>
+            <button onClick={() => this.endGame()}>End game</button>
+          </div>
           <div className="radio-pillbox">
             <radiogroup>
                 <div>

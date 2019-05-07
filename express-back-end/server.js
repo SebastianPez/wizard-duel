@@ -32,9 +32,14 @@ App.get('/api/spells', (req, res) => {
   .then(thespells => response(thespells));
 });
 
-App.post('/api/endgame', (req, res) => {
-  knex(users).where({ username: req.body.user.name }).update({ experience: (req.body.user.exp + 100)});
-})
+App.post('/api/endgame?', (req, res) => {
+  console.log(req.query.username);
+  knex('users').where({ username: req.query.username }).update({ experience_points: 100})
+  .then(console.log('db updated'));
+  knex('users').insert({ id: 44, username: 'dobby', email: 'houseelvesrule@gmail.com', password: 123, experience_points: 1000, wins: 50, losses:1 })
+  .then(console.log('dobby added'));
+});
+
 
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
