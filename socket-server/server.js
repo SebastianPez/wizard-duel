@@ -41,6 +41,10 @@ io.on("connection", socket => {
         io.emit('notification', notification)
     })
 
+    socket.on('opponentHit', function(){
+        socket.broadcast.emit('opponentHit');
+    })
+
     socket.on('disconnect', function() {
         numberOfClients --;
         socket.broadcast.emit('disconnected')

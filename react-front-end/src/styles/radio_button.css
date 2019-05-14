@@ -1,188 +1,762 @@
-.radio-label {
-  width: 100%;
-  margin-bottom: 1em;
-  text-align: center;
+@media only screen and (min-width:320px) and (max-width:812px) and (orientation:landscape){
+  .radio-label {
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  .radio-pillbox {
+    height: 2em;
+    width: 100%;
+    font-size: 1em;
+    border: 0;
+    border-radius: 75px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -moz-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -o-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -ms-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    color: #000000;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  }
+  .radio-pillbox2 {
+    height: 2em;
+    width: 100%;
+    font-size: 1em;
+    border: 0;
+    border-radius: 75px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -moz-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -o-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -ms-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    color: #000000;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  }
+
+  .radio-pillbox radiogroup {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .radio-pillbox2 radiogroup {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .radio-pillbox radiogroup div {
+    width: 100%;
+    position: relative;
+  }
+  .radio-pillbox2 radiogroup div {
+    width: 100%;
+    position: relative;
+  }
+
+  .radio-pillbox radiogroup div input {
+    -webkit-appearance: inherit;
+    width: 100%;
+    height: 100%;
+    transition: background 300ms ease-out;
+    margin: 0;
+    outline: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .radio-pillbox2 radiogroup div input {
+    -webkit-appearance: inherit;
+    width: 100%;
+    height: 100%;
+    transition: background 300ms ease-out;
+    margin: 0;
+    outline: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .radio-pillbox radiogroup div input:checked {
+    color: #5f6982;
+    border: none;
+    box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
+  }
+  .radio-pillbox2 radiogroup div input:checked {
+    color: #5f6982;
+    border: none;
+    box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
+  }
+
+  .radio-pillbox radiogroup .first {
+    border-radius: 75px 0 0 75px;
+    border-left: none;
+  }
+  .radio-pillbox2 radiogroup .first {
+    border-radius: 75px 0 0 75px;
+    border-left: none;
+  }
+
+  .radio-pillbox radiogroup .last { border-radius: 0 75px 75px 0; }
+  .radio-pillbox radiogroup2 .last { border-radius: 0 75px 75px 0; }
+
+  .radio-pillbox radiogroup div label {
+    position: absolute;
+    top: 50%; /* top plus line-height centers text */
+    line-height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .radio-pillbox2 radiogroup div label {
+    position: absolute;
+    top: 50%; /* top plus line-height centers text */
+    line-height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .radio-pillbox input:focus { outline: 0; }
+
+  .radio-pillbox2 input:focus { outline: 0; }
+
+  .radio-pillbox label:after {
+    content: "\2714";
+    display: inline-block;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -moz-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -moz-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -o-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -o-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
+  .radio-pillbox2 label:after {
+    content: "\2714";
+    display: inline-block;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -moz-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -moz-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -o-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -o-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
+
+  .radio-pillbox input:checked + label:after {
+    margin-left: 12px;
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transition: -webkit-transform 500ms  cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -moz-transition: -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -o-transition: -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  }
+
+  .radio-pillbox2 input:checked + label:after {
+    margin-left: 12px;
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transition: -webkit-transform 500ms  cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -moz-transition: -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -o-transition: -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  }
 }
 
-.radio-pillbox {
-  height: 2em;
-  width: 100%;
-  font-size: 1em;
-  border: 0;
-  border-radius: 75px;
-  overflow: hidden;
-  background: -webkit-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+@media only screen and (min-width:813px) and (max-width:1023px) and (orientation:landscape){
+  .radio-label {
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center;
+  }
 
-  background: -moz-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+  .radio-pillbox {
+    height: 2em;
+    width: 100%;
+    font-size: 1em;
+    border: 0;
+    border-radius: 75px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-  background: -o-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+    background: -moz-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-  background: -ms-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+    background: -o-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-  background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+    background: -ms-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-  color: #000000;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
+    color: #000000;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  }
+  .radio-pillbox2 {
+    height: 2em;
+    width: 100%;
+    font-size: 1em;
+    border: 0;
+    border-radius: 75px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -moz-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -o-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -ms-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    color: #000000;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  }
+
+  .radio-pillbox radiogroup {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .radio-pillbox2 radiogroup {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .radio-pillbox radiogroup div {
+    width: 100%;
+    position: relative;
+  }
+  .radio-pillbox2 radiogroup div {
+    width: 100%;
+    position: relative;
+  }
+
+  .radio-pillbox radiogroup div input {
+    -webkit-appearance: inherit;
+    width: 100%;
+    height: 100%;
+    transition: background 300ms ease-out;
+    margin: 0;
+    outline: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .radio-pillbox2 radiogroup div input {
+    -webkit-appearance: inherit;
+    width: 100%;
+    height: 100%;
+    transition: background 300ms ease-out;
+    margin: 0;
+    outline: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .radio-pillbox radiogroup div input:checked {
+    color: #5f6982;
+    border: none;
+    box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
+  }
+  .radio-pillbox2 radiogroup div input:checked {
+    color: #5f6982;
+    border: none;
+    box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
+  }
+
+  .radio-pillbox radiogroup .first {
+    border-radius: 75px 0 0 75px;
+    border-left: none;
+  }
+  .radio-pillbox2 radiogroup .first {
+    border-radius: 75px 0 0 75px;
+    border-left: none;
+  }
+
+  .radio-pillbox radiogroup .last { border-radius: 0 75px 75px 0; }
+  .radio-pillbox radiogroup2 .last { border-radius: 0 75px 75px 0; }
+
+  .radio-pillbox radiogroup div label {
+    position: absolute;
+    top: 50%; /* top plus line-height centers text */
+    line-height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .radio-pillbox2 radiogroup div label {
+    position: absolute;
+    top: 50%; /* top plus line-height centers text */
+    line-height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .radio-pillbox input:focus { outline: 0; }
+
+  .radio-pillbox2 input:focus { outline: 0; }
+
+  .radio-pillbox label:after {
+    content: "\2714";
+    display: inline-block;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -moz-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -moz-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -o-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -o-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
+  .radio-pillbox2 label:after {
+    content: "\2714";
+    display: inline-block;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -moz-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -moz-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -o-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -o-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
+
+  .radio-pillbox input:checked + label:after {
+    margin-left: 12px;
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transition: -webkit-transform 500ms  cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -moz-transition: -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -o-transition: -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  }
+
+  .radio-pillbox2 input:checked + label:after {
+    margin-left: 12px;
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transition: -webkit-transform 500ms  cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -moz-transition: -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -o-transition: -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  }
 }
-.radio-pillbox2 {
-  height: 2em;
-  width: 100%;
-  font-size: 1em;
-  border: 0;
-  border-radius: 75px;
-  overflow: hidden;
-  background: -webkit-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-  background: -moz-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+@media only screen and (min-width:1024px) and (max-width:1999px) and (orientation:landscape){
+  .radio-label {
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center;
+  }
 
-  background: -o-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+  .radio-pillbox {
+    height: 2em;
+    width: 100%;
+    font-size: 1em;
+    border: 0;
+    border-radius: 75px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-  background: -ms-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+    background: -moz-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-  background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+    background: -o-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-  color: #000000;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background: -ms-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
+    background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    color: #000000;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  }
+  .radio-pillbox2 {
+    height: 2em;
+    width: 100%;
+    font-size: 1em;
+    border: 0;
+    border-radius: 75px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -moz-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -o-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: -ms-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
+
+    color: #000000;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  }
+
+  .radio-pillbox radiogroup {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .radio-pillbox2 radiogroup {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .radio-pillbox radiogroup div {
+    width: 100%;
+    position: relative;
+  }
+  .radio-pillbox2 radiogroup div {
+    width: 100%;
+    position: relative;
+  }
+
+  .radio-pillbox radiogroup div input {
+    -webkit-appearance: inherit;
+    width: 100%;
+    height: 100%;
+    transition: background 300ms ease-out;
+    margin: 0;
+    outline: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .radio-pillbox2 radiogroup div input {
+    -webkit-appearance: inherit;
+    width: 100%;
+    height: 100%;
+    transition: background 300ms ease-out;
+    margin: 0;
+    outline: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .radio-pillbox radiogroup div input:checked {
+    color: #5f6982;
+    border: none;
+    box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
+  }
+  .radio-pillbox2 radiogroup div input:checked {
+    color: #5f6982;
+    border: none;
+    box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
+  }
+
+  .radio-pillbox radiogroup .first {
+    border-radius: 75px 0 0 75px;
+    border-left: none;
+  }
+  .radio-pillbox2 radiogroup .first {
+    border-radius: 75px 0 0 75px;
+    border-left: none;
+  }
+
+  .radio-pillbox radiogroup .last { border-radius: 0 75px 75px 0; }
+  .radio-pillbox radiogroup2 .last { border-radius: 0 75px 75px 0; }
+
+  .radio-pillbox radiogroup div label {
+    position: absolute;
+    top: 50%; /* top plus line-height centers text */
+    line-height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .radio-pillbox2 radiogroup div label {
+    position: absolute;
+    top: 50%; /* top plus line-height centers text */
+    line-height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .radio-pillbox input:focus { outline: 0; }
+
+  .radio-pillbox2 input:focus { outline: 0; }
+
+  .radio-pillbox label:after {
+    content: "\2714";
+    display: inline-block;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -moz-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -moz-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -o-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -o-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
+  .radio-pillbox2 label:after {
+    content: "\2714";
+    display: inline-block;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -moz-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -moz-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -o-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -o-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
+
+  .radio-pillbox input:checked + label:after {
+    margin-left: 12px;
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transition: -webkit-transform 500ms  cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -moz-transition: -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -o-transition: -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  }
+
+  .radio-pillbox2 input:checked + label:after {
+    margin-left: 12px;
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transition: -webkit-transform 500ms  cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -moz-transition: -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -o-transition: -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  }
 }
+@media only screen and (min-width:1200px){
+  .radio-label {
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center;
+  }
 
-.radio-pillbox radiogroup {
-  height: 100%;
-  width: 100%;
-  display: flex;
-}
+  .radio-pillbox {
+    height: 2em;
+    width: 100%;
+    font-size: 1em;
+    border: 0;
+    border-radius: 75px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-.radio-pillbox2 radiogroup {
-  height: 100%;
-  width: 100%;
-  display: flex;
-}
+    background: -moz-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-.radio-pillbox radiogroup div {
-  width: 100%;
-  position: relative;
-}
-.radio-pillbox2 radiogroup div {
-  width: 100%;
-  position: relative;
-}
+    background: -o-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-.radio-pillbox radiogroup div input {
-  -webkit-appearance: inherit;
-  width: 100%;
-  height: 100%;
-  transition: background 300ms ease-out;
-  margin: 0;
-  outline: 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
-}
-.radio-pillbox2 radiogroup div input {
-  -webkit-appearance: inherit;
-  width: 100%;
-  height: 100%;
-  transition: background 300ms ease-out;
-  margin: 0;
-  outline: 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
-}
+    background: -ms-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-.radio-pillbox radiogroup div input:checked {
-  color: #5f6982;
-  border: none;
-  box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
-}
-.radio-pillbox2 radiogroup div input:checked {
-  color: #5f6982;
-  border: none;
-  box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
-}
+    background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-.radio-pillbox radiogroup .first {
-  border-radius: 75px 0 0 75px;
-  border-left: none;
-}
-.radio-pillbox2 radiogroup .first {
-  border-radius: 75px 0 0 75px;
-  border-left: none;
-}
+    color: #000000;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
-.radio-pillbox radiogroup .last { border-radius: 0 75px 75px 0; }
-.radio-pillbox radiogroup2 .last { border-radius: 0 75px 75px 0; }
+  }
+  .radio-pillbox2 {
+    height: 2em;
+    width: 100%;
+    font-size: 1em;
+    border: 0;
+    border-radius: 75px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-.radio-pillbox radiogroup div label {
-  position: absolute;
-  top: 50%; /* top plus line-height centers text */
-  line-height: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
+    background: -moz-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-.radio-pillbox2 radiogroup div label {
-  position: absolute;
-  top: 50%; /* top plus line-height centers text */
-  line-height: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
+    background: -o-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-.radio-pillbox input:focus { outline: 0; }
+    background: -ms-linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-.radio-pillbox2 input:focus { outline: 0; }
+    background: linear-gradient(  100deg,  #113d00 0%,  #2e4c90 30%,  #d9af00 70%,  #d02400 100%  );
 
-.radio-pillbox label:after {
-  content: "\2714";
-  display: inline-block;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -o-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -moz-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -moz-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -o-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -o-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}
-.radio-pillbox2 label:after {
-  content: "\2714";
-  display: inline-block;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -o-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -moz-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -moz-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -o-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -o-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}
+    color: #000000;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
-.radio-pillbox input:checked + label:after {
-  margin-left: 12px;
-  -webkit-transform: scale(1.25);
-  -moz-transform: scale(1.25);
-  -o-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-  -webkit-transition: -webkit-transform 500ms  cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-  -moz-transition: -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-  -o-transition: -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-}
+  }
 
-.radio-pillbox2 input:checked + label:after {
-  margin-left: 12px;
-  -webkit-transform: scale(1.25);
-  -moz-transform: scale(1.25);
-  -o-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-  -webkit-transition: -webkit-transform 500ms  cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-  -moz-transition: -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-  -o-transition: -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  .radio-pillbox radiogroup {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .radio-pillbox2 radiogroup {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .radio-pillbox radiogroup div {
+    width: 100%;
+    position: relative;
+  }
+  .radio-pillbox2 radiogroup div {
+    width: 100%;
+    position: relative;
+  }
+
+  .radio-pillbox radiogroup div input {
+    -webkit-appearance: inherit;
+    width: 100%;
+    height: 100%;
+    transition: background 300ms ease-out;
+    margin: 0;
+    outline: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .radio-pillbox2 radiogroup div input {
+    -webkit-appearance: inherit;
+    width: 100%;
+    height: 100%;
+    transition: background 300ms ease-out;
+    margin: 0;
+    outline: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .radio-pillbox radiogroup div input:checked {
+    color: #5f6982;
+    border: none;
+    box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
+  }
+  .radio-pillbox2 radiogroup div input:checked {
+    color: #5f6982;
+    border: none;
+    box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.1);
+  }
+
+  .radio-pillbox radiogroup .first {
+    border-radius: 75px 0 0 75px;
+    border-left: none;
+  }
+  .radio-pillbox2 radiogroup .first {
+    border-radius: 75px 0 0 75px;
+    border-left: none;
+  }
+
+  .radio-pillbox radiogroup .last { border-radius: 0 75px 75px 0; }
+  .radio-pillbox radiogroup2 .last { border-radius: 0 75px 75px 0; }
+
+  .radio-pillbox radiogroup div label {
+    position: absolute;
+    top: 50%; /* top plus line-height centers text */
+    line-height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .radio-pillbox2 radiogroup div label {
+    position: absolute;
+    top: 50%; /* top plus line-height centers text */
+    line-height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .radio-pillbox input:focus { outline: 0; }
+
+  .radio-pillbox2 input:focus { outline: 0; }
+
+  .radio-pillbox label:after {
+    content: "\2714";
+    display: inline-block;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -moz-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -moz-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -o-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -o-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
+  .radio-pillbox2 label:after {
+    content: "\2714";
+    display: inline-block;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -moz-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -moz-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -o-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  -o-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms,  transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
+
+  .radio-pillbox input:checked + label:after {
+    margin-left: 12px;
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transition: -webkit-transform 500ms  cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -moz-transition: -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -o-transition: -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  }
+
+  .radio-pillbox2 input:checked + label:after {
+    margin-left: 12px;
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transition: -webkit-transform 500ms  cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms,  -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -moz-transition: -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -moz-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    -o-transition: -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)  250ms,  margin 500ms,  -o-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms,  margin 500ms, transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  }
 }

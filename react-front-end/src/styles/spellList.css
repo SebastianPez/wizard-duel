@@ -1,33 +1,147 @@
-.spellsTable {
-    display: flex;
-    flex-wrap:wrap;
-    color: white;
-    columns: 3;
-    height: 100px;
-    width: auto;
-    overflow-y: scroll;
-}
+/* @media only screen and (min-width:320px) and (max-width:812px) and (orientation:landscape){
+    .spellsTable {
+        display: flex;
+        flex-wrap:wrap;
+        color: white;
+        columns: 3;
+        height: 100px;
+        width: auto;
+        overflow-y: scroll;
+    }
+    
+    .spellChoiceBtn {
+        flex-wrap: wrap;
+        height: 90px;
+        width: 300px;
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        margin-right:8%;
+        font-weight:bold;
+    }
+    
+    .spellName{
+        font-size: 24px;
+    }
+    
+    div.radio-pillbox{
+        width:25;
+        position:right;
+        padding:0;
+    }
+    
+    
+} */
 
-.spellChoiceBtn {
-    flex-wrap: wrap;
-    height: 90px;
-    width: 300px;
-    background-color: rgb(28, 189, 28);
-    border-radius: 50%;
-    font-size: 1.5em;
-    text-align: center;
-    padding:0 10px;
-    margin-right:8%;
-    font-weight:bold;
-}
+/* @media only screen and (min-width:813px) and (max-width:1023px) and (orientation:landscape){
+    .spellsTable {
+        display: flex;
+        flex-wrap:wrap;
+        color: white;
+        columns: 3;
+        height: 100px;
+        width: auto;
+        overflow-y: scroll;
+    }
+    
+    .spellChoiceBtn {
+        flex-wrap: wrap;
+        height: 90px;
+        width: 300px;
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        margin-right:8%;
+        font-weight:bold;
+    }
+    
+    .spellName{
+        font-size: 24px;
+    }
+    
+    div.radio-pillbox{
+        width:25;
+        position:right;
+        padding:0;
+    }
+    
+    
+} */
 
-.spellName{
-    font-size: 24px;
-}
+/* @media only screen and (min-width:1024px) and (max-width:1999px) and (orientation:landscape){
+    .spellsTable {
+        display: flex;
+        flex-wrap:wrap;
+        color: white;
+        columns: 3;
+        height: 100px;
+        width: auto;
+        overflow-y: scroll;
+    }
+    
+    .spellChoiceBtn {
+        flex-wrap: wrap;
+        height: 90px;
+        width: 300px;
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        margin-right:8%;
+        font-weight:bold;
+    }
+    
+    .spellName{
+        font-size: 24px;
+    }
+    
+    div.radio-pillbox{
+        width:25;
+        position:right;
+        padding:0;
+    }
+    
+    
+} */
 
-div.radio-pillbox{
-    width:25;
-    position:right;
-    padding:0;
+@media only screen and (min-width:1200px) {
+    .spellsTable {
+        display: flex;
+        flex-wrap:wrap;
+        color: white;
+        columns: 3;
+        height: 100px;
+        width: auto;
+        overflow-y: scroll;
+    }
+    
+    .spellChoiceBtn {
+        flex-wrap: wrap;
+        height: 90px;
+        width: 300px;
+        background-color: rgb(217, 204, 91);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        margin-right:8%;
+        font-weight:bold;
+    }
+    
+    .spellName{
+        font-size: 24px;
+    }
+    
+    div.radio-pillbox{
+        width:25;
+        position:right;
+        padding:0;
+    }
+    
+    
 }
-

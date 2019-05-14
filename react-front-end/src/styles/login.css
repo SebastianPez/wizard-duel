@@ -1,45 +1,77 @@
-@media only screen and (min-width:320px) and (max-width:767px){
+
+@media only screen and (min-width:320px) and (max-width:830px) and (orientation:landscape){
 
     .login{
         display:flex;
         flex-wrap: wrap;
+        align-items: center;
+    }
+    #flipMe p{
+        display:none;
+        flex-wrap: wrap;
+        text-justify: center;
+        padding: 5% 20%;
+        width: 70vw;
+        height: 100vh;
+        font-size:45px;
+        color: white;
+        position:center;
     }
     .leftLogin{
-        width:100%;
+        width:100vw;
         padding-top: 20px;
+        display:flex;
+        justify-content: space-around;
     }
-    .dumbledoreSpeech{
-        transform: scaleX(-1);
+    .dumbledoreSpeech img{
+        /* margin-left: 20%; */
+        width: 40vw;
     }
-    .instructions{
-        height:400px;
+    .speech-bubble {
+        background: #efefef;
+        -webkit-border-radius: 4px;
+                border-radius: 4px;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        width: 40vw;
+        height:30vw;
+        padding: 15px;
+        position: relative;
+        flex-wrap:wrap;
+    }
+    .speech-bubble p {
+        width: inherit;
+        font-family: 'Oswald', Helvetica Neue;
+        margin: 0 0 10px;
+        overflow: scroll;
+        max-height: 40vh;
+        margin-top:-0vh;
+
     }
 
     .right{
         display: flex;
-        justify-items: center;
-        width:100%;
+        justify-content: center;
+        flex-direction: column;
+        width:100vw;
+        padding-left: 10vw;
     }
     .loginForm {
         display: flex;
         flex-wrap: wrap;
         color: white;
-        /* margin-top: 100%; */
-        margin-left: 10%;
+        width: 80vw;
     }
 
     .input{
-        /* flex-basis:100%; */
-        height: 50px;
-        width:80%;
-        font-size: 36px;
-        background: #e6a7f1;
+        width:79vw;
+        font-size: 24px;
+        background: white;
     }
     #login-in-button{
-        flex-basis:82%;
         background-color:#aa6cb8;
         font-size: 24px;
-        height: 50px;
+        width: 80vw;
     }
     .input:hover{
         background: #4bb459;
@@ -56,53 +88,144 @@
 
 }
 
-@media only screen and (min-width:768px) and (max-width: 1023px){
+@media only screen and (min-width:0px) and (max-width: 1199px) and (orientation:portrait){
+    img.header{
+        width: 30vw;
+        padding-left: 35vw;
+    }
+    .leftLogin{
+        display:none;
+    }
+    .dumbledoreSpeech{
+        display:none;
+    }
+    .instructions{
+        display:none;
+    }
 
+    .right{
+        display:none;
+    }
+    .loginForm {
+        display:none;
+    }
+
+    .input{
+        display:none;
+    }
+    #login-in-button{
+        display:none;
+    }
+    .input:hover{
+        display:none;
+    }
+    #login-in-button:hover{
+        display:none;
+    }
+    #flipMe p{
+        display:flex;
+        flex-wrap: wrap;
+        text-justify: center;
+        padding: 5% 20%;
+        width: 70vw;
+        height: 100vh;
+        font-size:45px;
+        color: white;
+        position:center;
+    }
+
+    body {
+        background-image: url('/deathly-hallows-wallpapers-24.jpg');
+    }
+}
+
+@media only screen and (min-width:1020px) and (max-width: 1365px) and (orientation:landscape){
+    img.header{
+        width: 30vw;
+        padding-left: 0vw;
+    }
     .login{
         display:flex;
     }
     .leftLogin{
         width:50%;
         padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left:1vw;
     }
-    .dumbledoreSpeech{
+    .dumbledoreSpeech img{
         transform: scaleX(-1);
+        height:70%;
+        width:70%;
+
     }
-    .instructions{
-        height:400px;
+    .speech-bubble {
+        background: #efefef;
+        -webkit-border-radius: 4px;
+                border-radius: 4px;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        max-width: 100%;
+        padding: 15px;
+        position: relative;
+        flex-wrap:wrap;
+    }
+    .speech-bubble p {
+        width: inherit;
+        font-family: 'Oswald', Helvetica Neue;
+        margin: 0 0 10px;
+    }
+
+    .speech-bubble::after {
+        border-left: 20px solid transparent;
+        border-top: 20px solid #efefef;
+        bottom: -20px;
+        content: "";
+        position: absolute;
+        right: 300px;
     }
 
     .right{
         display: flex;
         justify-items: center;
         width:50%;
+        margin-top: 10%;
+        height: 200px;
     }
+
     .loginForm {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         color: white;
-        margin-top: 100%;
+        margin-top: -25%;
+        margin-top: 35%;
         margin-left: 10%;
     }
 
     .input{
-        flex-basis:100%;
+        flex-basis:45%;
         height: 50px;
         width:300px;
         font-size: 36px;
+        border: none;
         background: #e6a7f1;
+    }
+    .input::placeholder{
+        color:black;
+        text-align: center;
+        letter-spacing: .2em;
     }
     #login-in-button{
         flex-basis:50%;
-        margin-top: -50%;
-        background-color:#53bb87;
-        /* background-color:#48ae94; */
+        margin-top: 2%;
+        background-color:#48ae94;
         font-size: 24px;
         height: 50px;
         width: 50px;
     }
-
     .input:hover{
         background: #4bb459;
         cursor: pointer;
@@ -115,10 +238,35 @@
     body {
         background-image: url('/deathly-hallows-wallpapers-24.jpg');
     }
-
+    #flipMe p{
+        display:none;
+        flex-wrap: wrap;
+        text-justify: center;
+        padding: 5% 20%;
+        width: 70vw;
+        height: 100vh;
+        font-size:45px;
+        color: white;
+        position:center;
+    }
 }
 
-@media only screen and (min-width:1024px) and (max-width: 1999px){
+@media only screen and (min-width:1366px) and (max-width: 2000px) and (orientation:landscape){
+    img.header{
+        width: 30vw;
+        padding-left: 0vw;
+    }
+    #flipMe p{
+        display:none;
+        flex-wrap: wrap;
+        text-justify: center;
+        padding: 5% 20%;
+        width: 70vw;
+        height: 100vh;
+        font-size:45px;
+        color: white;
+        position:center;
+    }
 
     .login{
         display:flex;
@@ -178,26 +326,54 @@
 
 }
 
-@media only screen and (min-width:1025px) and (max-width:20000px){
-
-    .login{
-        display:flex;
+@media only screen and (min-width:1200px){
+    img.header{
+        width: 30vw;
+        padding-left: 0vw;
     }
     .leftLogin{
         width:50%;
         padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 5%;
+        margin-top: 2%;
     }
-    .dumbledoreSpeech{
-        transform: scaleX(-1);
+    .dumbledoreSpeech img{
+        margin-left: 20%;
     }
-    .instructions{
-        height:400px;
+    .speech-bubble {
+        background: #efefef;
+        -webkit-border-radius: 4px;
+                border-radius: 4px;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        max-width: 100%;
+        padding: 15px;
+        position: relative;
+        flex-wrap:wrap;
+    }
+    .speech-bubble p {
+        width: inherit;
+        font-family: 'Oswald', Helvetica Neue;
+        margin: 0 0 10px;
+    }
+
+    .speech-bubble::after {
+        border-left: 20px solid transparent;
+        border-top: 20px solid #efefef;
+        bottom: -20px;
+        content: "";
+        position: absolute;
+        right: 300px;
     }
 
     .right{
         display: flex;
         justify-items: center;
         width:50%;
+        margin-top: 10%;
         height: 200px;
     }
 
@@ -218,7 +394,6 @@
         font-size: 36px;
         border: none;
         background: #e6a7f1;
-        /* color: black; */
     }
     .input::placeholder{
         color:black;
@@ -244,11 +419,7 @@
 
     body {
         background-image: url('/deathly-hallows-wallpapers-24.jpg');
+        background-position: center;
     }
 
 }
-
-
-
-
-

@@ -46,7 +46,7 @@ App.get('/api/users', (req, res) => {
 })
 
 App.post('/api/newuser?', (req, res) => {
-  knex('users').insert({ id: randomId(), username: req.query.username, email: `wizard@wizardduel.jams`, password: 123, experience_points: 0, wins: 0, losses: 0 })
+  knex('users').insert({ id: randomId(), username: req.query.username, email: `wizard@wizardduel.jams`, password: 123, experience_points: 100, wins: 0, losses: 0 })
   .then(console.log(`${req.query.username} added`));
 })
 
@@ -55,7 +55,6 @@ App.post('/api/endgame?', (req, res) => {
   knex('users').where({ username: req.query.username }).update({ experience_points: (parseInt(req.query.experience, 10) + 100)})
   .then(console.log('db updated'));
 });
-
 
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console

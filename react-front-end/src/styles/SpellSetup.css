@@ -1,170 +1,686 @@
-.spellSetup {
-    display: flex;
-    flex-wrap: wrap;
-    color:white;
-    height: 100%;
+/* @media only screen and (min-width:320px) and (max-width:812px) and (orientation:landscape){
+    .spellSetup {
+        display: flex;
+        flex-wrap: wrap;
+        color:white;
+        height: auto;
+        font-size:10px;
+    }
+
+    .spellSetup > #text{
+    height: 400px;
+    }
+
+    h1 {
+        display:none;
+        margin-top:2%;
+        margin-bottom:2%;
+        text-align: center;
+        color:white;
+        padding: 0;
+        margin: 0;
+    }
+
+    .spell-selection {
+        margin-top: 50px;
+        width: 100vw;
+        max-height: 30vw;
+        margin-right: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        overflow: scroll;
+        overscroll-behavior-y: scroll;
+    }
+
+    .wizard-info {
+        width: 100%;
+        height: 15%;
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position:fixed;
+    }
+
+    h2 {
+        display:none;
+        padding-left:10px;
+    }
+
+    .available-spells {
+        width:90vw;
+    }
+    .available-spells div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        width:100vw;
+        justify-content: space-between;
+    }
+
+    .castinfo{
+        margin-right:-40px;
+    }
+
+    h5{
+        height: 25px;
+        width: 20vw;
+        background-color: rgb(50, 186, 238);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        margin:0;
+    }
+    .circle-display{
+        margin-right: 11vw;
+    }
+    .circle-display2{
+        margin-right:70px;
+        margin-top: 20px;
+    }
+    .StartGame{
+        margin-top: 10%;
+    }
+
+    .circle-display3{
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%; 
+        text-align: center;
+        color: white;
+        margin-right:10vw;
+        width:80vw;
+    }
+
+    .purchased-spells {
+        width: 80vw;
+        height:auto;
+        overflow: scroll;
+        overscroll-behavior-y: scroll;
+        background: rgba(57, 149, 128, 0.7);
+        margin-top: 20px;
+    }
+    .spellArray{
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        width: 100vw;
+        padding-top: 2%;
+        font-size:12px;
+    }
+
+    .spellArray div{
+        flex-grow: 1;
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+
+    .dot {
+        height: 25px;
+        width: 100vw;
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        margin-right:8%;
+        font-weight:bold;
+    }
+
+    .dot2 {
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        font-weight:bold;
+        margin-top:200px;
+    }
+
+    .dot2#start{
+        font-size:24px;
+        color:white;
+    }
+
+    h3{
+    font-size:16px;
+    font-weight: bold;
+    }
+    p{
+        background:none;
+        font-style: italic;
+        font-size: 14px;
+        padding-left: 4%;
+        width:50vw;
+        flex-wrap:wrap;
+    }
+
+    #cast_limit{
+        width:240px;
+        padding-right:15px;
+    }
+
+    .bottom{
+        display:flex;
+        flex-direction:column;
+        margin: 0 5%;
+        width: 100vw;
+    }
 }
 
-.spellSetup > #text{
-height: 400px;
+@media only screen and (min-width:813px) and (max-width:1023px) and (orientation:landscape){
+    .spellSetup {
+        display: flex;
+        flex-wrap: wrap;
+        color:white;
+        height: auto;
+        font-size:10px;
+    }
+
+    .spellSetup > #text{
+    height: 400px;
+    }
+
+    h1 {
+        display:none;
+        margin-top:2%;
+        margin-bottom:2%;
+        text-align: center;
+        color:white;
+        padding: 0;
+        margin: 0;
+    }
+
+    .spell-selection {
+        margin-top: 50px;
+        width: 100vw;
+        max-height: 30vw;
+        margin-right: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        overflow: scroll;
+        overscroll-behavior-y: scroll;
+    }
+
+    .wizard-info {
+        width: 100%;
+        height: 15%;
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position:fixed;
+    }
+
+    h2 {
+        display:none;
+        padding-left:10px;
+    }
+
+    .available-spells {
+        width:90vw;
+    }
+    .available-spells div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        width:100vw;
+        justify-content: space-between;
+    }
+
+    .castinfo{
+        margin-right:-40px;
+    }
+
+    h5{
+        height: 25px;
+        width: 20vw;
+        background-color: rgb(50, 186, 238);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        margin:0;
+    }
+    .circle-display{
+        margin-right: 11vw;
+    }
+    .circle-display2{
+        margin-right:70px;
+        margin-top: 20px;
+    }
+    .StartGame{
+        margin-top: 10%;
+    }
+
+    .circle-display3{
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%; 
+        text-align: center;
+        color: white;
+        margin-right:10vw;
+        width:80vw;
+    }
+
+    .purchased-spells {
+        width: 80vw;
+        height:auto;
+        overflow: scroll;
+        overscroll-behavior-y: scroll;
+        background: rgba(57, 149, 128, 0.7);
+        margin-top: 20px;
+    }
+    .spellArray{
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        width: 100vw;
+        padding-top: 2%;
+        font-size:12px;
+    }
+
+    .spellArray div{
+        flex-grow: 1;
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+
+    .dot {
+        height: 25px;
+        width: 100vw;
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        margin-right:8%;
+        font-weight:bold;
+    }
+
+    .dot2 {
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        font-weight:bold;
+        margin-top:200px;
+    }
+
+    .dot2#start{
+        font-size:24px;
+        color:white;
+    }
+
+    h3{
+    font-size:16px;
+    font-weight: bold;
+    }
+    p{
+        background:none;
+        font-style: italic;
+        font-size: 14px;
+        padding-left: 4%;
+        width:50vw;
+        flex-wrap:wrap;
+    }
+
+    #cast_limit{
+        width:240px;
+        padding-right:15px;
+    }
+
+    .bottom{
+        display:flex;
+        flex-direction:column;
+        margin: 0 5%;
+        width: 100vw;
+    }
 }
 
-h1 {
-    margin-top:2%;
-    margin-bottom:2%;
-    text-align: center;
-    color:white;
-    padding: 0;
-    margin: 0;
-}
+@media only screen and (min-width:1024px) and (max-width:1999px) and (orientation:landscape){
+    .spellSetup {
+        display: flex;
+        flex-wrap: wrap;
+        color:white;
+        height: auto;
+        font-size:10px;
+    }
 
-.spell-selection {
-    margin-top: 5%;
-    width: 100%;
-    max-height: 500px;
-    margin-right: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    overflow: scroll;
-    overscroll-behavior-y: scroll;
-}
+    .spellSetup > #text{
+    height: 400px;
+    }
 
-.wizard-info {
-    width: 100%;
-    height: 15%;
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position:fixed;
-    /* margin-right: 400px; */
-}
+    h1 {
+        display:none;
+        margin-top:2%;
+        margin-bottom:2%;
+        text-align: center;
+        color:white;
+        padding: 0;
+        margin: 0;
+    }
 
-h2 {
-    /* width: 100%; */
-    padding-left:10px;
-}
+    .spell-selection {
+        margin-top: 50px;
+        width: 100vw;
+        max-height: 30vw;
+        margin-right: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        overflow: scroll;
+        overscroll-behavior-y: scroll;
+    }
 
-.available-spells {
-    width:100%;
-}
-.available-spells div {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    padding: 0 2% 0 2%;
-    justify-content: space-between;
-    height: 1.5%;
-}
+    .wizard-info {
+        width: 100%;
+        height: 15%;
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position:fixed;
+    }
 
-.castinfo{
-    margin-right:-40px;
-}
+    h2 {
+        display:none;
+        padding-left:10px;
+    }
 
-h5{
-    height: 25px;
-    width: 140px;
-    background-color: rgb(50, 186, 238);
-    border-radius: 50%;
-    font-size: 1.5em;
-    text-align: center;
-    margin:0;
-}
-.circle-display1{
-    margin-right: 10px;
-}
-.circle-display2{
-    width: 280px;
-}
-.StartGame{
-    margin-top: 10%;
-}
+    .available-spells {
+        width:90vw;
+    }
+    .available-spells div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        width:100vw;
+        justify-content: space-between;
+    }
 
-.circle-display3{
-    background-color: rgb(28, 189, 28);
-    border-radius: 50%;
-    font-size: 1em;
-    padding: 1em;
-    text-align: center;
-    color: white;
-    margin:0;
-}
+    .castinfo{
+        margin-right:-40px;
+    }
 
-.purchased-spells {
-    width: 650px;
-    height:200px;
-    overflow: scroll;
-    overscroll-behavior-y: scroll;
-    background: rgba(57, 149, 128, 0.7);
-    margin-top: 20px;
-    margin-left: -5%;
+    h5{
+        height: 25px;
+        width: 20vw;
+        background-color: rgb(50, 186, 238);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        margin:0;
+    }
+    .circle-display{
+        margin-right: 11vw;
+    }
+    .circle-display2{
+        margin-right:70px;
+        margin-top: 20px;
+    }
+    .StartGame{
+        margin-top: 10%;
+    }
 
-}
-.spellArray{
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    width: 100%;
-    padding-top: 2%;
-    font-size:40px;
-}
+    .circle-display3{
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%; 
+        text-align: center;
+        color: white;
+        margin-right:10vw;
+        width:80vw;
+    }
 
-.spellArray div{
-    flex-grow: 1;
-    padding-top:15px;
-    padding-bottom:15px;
-}
+    .purchased-spells {
+        width: 80vw;
+        height:auto;
+        overflow: scroll;
+        overscroll-behavior-y: scroll;
+        background: rgba(57, 149, 128, 0.7);
+        margin-top: 20px;
+    }
+    .spellArray{
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        width: 100vw;
+        padding-top: 2%;
+        font-size:12px;
+    }
 
-.dot {
-    height: 25px;
-    width: 280px;
-    background-color: rgb(28, 189, 28);
-    border-radius: 50%;
-    font-size: 1.5em;
-    text-align: center;
-    padding:0 10px;
-    margin-right:8%;
-    font-weight:bold;
-}
+    .spellArray div{
+        flex-grow: 1;
+        padding-top:15px;
+        padding-bottom:15px;
+    }
 
-.dot2 {
-    background-color: rgb(28, 189, 28);
-    border-radius: 50%;
-    font-size: 1.5em;
-    text-align: center;
-    padding:0 10px;
-    font-weight:bold;
-    margin-top:200px;
-}
+    .dot {
+        height: 25px;
+        width: 100vw;
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        margin-right:8%;
+        font-weight:bold;
+    }
 
-.dot2#start{
-    font-size:40px;
-    color:white;
-    position:center;
-    padding:4px 1.5em;
-}
+    .dot2 {
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        font-weight:bold;
+        margin-top:200px;
+    }
 
-h3{
-   font-size:24px;
-}
-p{
-    background:none;
-    font-style: italic;
-    font-size: 24px;
-    padding-left: 4%;
-}
+    .dot2#start{
+        font-size:24px;
+        color:white;
+    }
 
-#cast_limit{
-    width:240px;
-    padding-right:15px;
-}
+    h3{
+    font-size:16px;
+    font-weight: bold;
+    }
+    p{
+        background:none;
+        font-style: italic;
+        font-size: 14px;
+        padding-left: 4%;
+        width:50vw;
+        flex-wrap:wrap;
+    }
 
-.bottom{
-    display:flex;
-    justify-content: space-between;
-    margin: 0 5%;
-    width: 100%;
+    #cast_limit{
+        width:240px;
+        padding-right:15px;
+    }
+
+    .bottom{
+        display:flex;
+        flex-direction:column;
+        margin: 0 5%;
+        width: 100vw;
+    }
+} */
+
+@media only screen and (min-width:1025px) and (max-width:20000px){
+    .spellSetup {
+        display: flex;
+        flex-wrap: wrap;
+        color:white;
+        height: 100%;
+    }
+
+    .spellSetup > #text{
+    height: 400px;
+    }
+
+    h1 {
+        margin-top:2%;
+        margin-bottom:2%;
+        text-align: center;
+        color:white;
+        padding: 0;
+        margin: 0;
+    }
+
+    .spell-selection {
+        margin-top: 6%;
+        width: 100%;
+        max-height: 500px;
+        margin-right: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        overflow: scroll;
+        overscroll-behavior-y: scroll;
+    }
+
+    .wizard-info {
+        width: 100%;
+        height: 15%;
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position:fixed;
+    }
+
+    h2 {
+        padding-left:10px;
+    }
+
+    .available-spells {
+        width:100%;
+    }
+    .available-spells div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        padding: 0 2% 0 2%;
+        justify-content: space-between;
+        height: 1.5%;
+    }
+
+    #spellContainer:hover div{
+        cursor: pointer;
+        background-color: #4aa28a;
+    }
+    .castinfo{
+        margin-right:-40px;
+    }
+
+    h5{
+        height: 25px;
+        width: 140px;
+        background-color: rgb(50, 186, 238);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        margin:0;
+    }
+    .circle-display1{
+        margin-right: 10px;
+    }
+    .circle-display2{
+        width: 280px;
+    }
+    .StartGame{
+        margin-top: 10%;
+    }
+
+    .circle-display3{
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1em;
+        padding: 1em;
+        text-align: center;
+        color: white;
+        margin:0;
+    }
+
+    .purchased-spells {
+        width: 650px;
+        height:200px;
+        overflow: scroll;
+        overscroll-behavior-y: scroll;
+        background: rgba(57, 149, 128, 0.7);
+        margin-top: 20px;
+        margin-left: -5%;
+    }
+    .purchased-spells div div:hover{
+        background:rgb(250, 55, 55);
+    }
+    .spellArray{
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        width: 100%;
+        padding-top: 2%;
+        font-size:40px;
+    }
+
+    .spellArray div{
+        flex-grow: 1;
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+
+    .dot {
+        /* height: 25px; */
+        width: 280px;
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        margin-right:5.7%;
+        font-weight:bold;
+    }
+
+    .dot2 {
+        background-color: rgb(28, 189, 28);
+        border-radius: 50%;
+        font-size: 1.5em;
+        text-align: center;
+        padding:0 10px;
+        font-weight:bold;
+        margin-top:200px;
+    }
+
+    .dot2#start{
+        font-size:40px;
+        color:white;
+        position:center;
+        padding:4px 1.5em;
+    }
+
+    h3{
+    font-size:24px;
+    }
+    p{
+        background:none;
+        font-style: italic;
+        font-size: 24px;
+        padding-left: 4%;
+    }
+
+    #cast_limit{
+        width:240px;
+        padding-right:15px;
+    }
+
+    .bottom{
+        display:flex;
+        justify-content: space-between;
+        margin: 0 5%;
+        width: 100%;
+    }
 }
 
 
