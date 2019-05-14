@@ -56,11 +56,9 @@ class App extends Component {
 
   updateCurrentUser = () => {
     if (this.state.currentUser.username.length > 0 && this.state.currentUser.id === 0) {
-      console.log('first check');
       let allUsers = this.state.usersFromDb.users;
       for (let userObject of allUsers) {
         if (userObject.username === this.state.currentUser.username) {
-          console.log('second check');
           this.setState({ currentUser: userObject });
         };
       };
@@ -117,7 +115,6 @@ class App extends Component {
   }
 
   addNewUser = (user) => {
-    // console.log(user);
     axios({
       method: "post",
       url: "/api/newuser",

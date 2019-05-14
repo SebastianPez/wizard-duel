@@ -12,7 +12,7 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.newUser(this.state.user);
+        this.props.newUser(this.state.user.toLowerCase());
     }
     render() {
         return (

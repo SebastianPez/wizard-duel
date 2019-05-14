@@ -11,10 +11,15 @@ class SpellSetup extends Component {
         this.state = {
             playerMana: 1000000,
             playerPosition: 2,
-            chosenSpells: [{casts: 100, affect_opponent: false, name: 'Confrigo', cost: 0, power: 2, id: 1, description: 'fiery cast dealing 2 damage to your opponent'}]
+            chosenSpells: [{casts: 100, affect_opponent: false, name: 'Confrigo', cost: 0, power: 2, id: 1, description: 'fiery cast dealing 2 damage to your opponent'}],
+            playerLevel: 0
         }
     }
-
+    componentDidMount() {
+        this.setState({ playerLevel: Math.floor(this.props.state.currentUser.experience_points / 100)}, () => {
+            console.log(this.state.playerLevel);
+        });
+    }
     choosePosition = (e) => {
         let numberified = Number(e.target.value);
         this.setState({ playerPosition: numberified }, () => {
