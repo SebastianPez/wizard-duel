@@ -23,6 +23,10 @@ class App extends Component {
         losses: 0,
         email: 'noone@noone.com'
       },
+<<<<<<< HEAD
+=======
+      usersFromDb: null,
+>>>>>>> db2b63aeb377094b7fc9c4596e4fc9c5d1e56fa0
       spells: null,
       notifications: ['New player has joined', 'Player 1, your turn!'],
       myCharacter: null,
@@ -37,8 +41,78 @@ class App extends Component {
     this.fetchUsers();
   }
 
+  updateCurrentUser = () => {
+    if (this.state.currentUser.username.length > 0 && this.state.currentUser.id === 0) {
+      let allUsers = this.state.usersFromDb.users;
+      for (let userObject of allUsers) {
+        if (userObject.username === this.state.currentUser.username) {
+          this.setState({ currentUser: userObject });
+        };
+      };
+    };
+  }
+
+  newUser = (user) => {
+    console.log('new user hit', user);
+    this.fetchData()
+    .then(([{ data: { wizards: { wizards } } }, { data: { spells: { spells } } }]) => {
+      if (this.checkIfUserExists(user)) {
+        console.log("It;s true");
+        this.addNewUser(user);
+      };
+      this.setState({
+        wizards, spells, currentUser: { username: user, id: 0, experience_points:100}
+      }, () => {
+        this.fetchUsers();
+      })
+    }).catch(console.error)
+  }
+
+  setUsers = (users) => {
+    this.setState({
+      usersFromDb: users 
+    }); 
+  }
+  
+  fetchUsers() {
+    return axios.get('/api/users')
+    .then(usersFromDb => this.setUsers(usersFromDb.data.usersFromDb));
+  }
+
+  checkIfUserExists = (username) => {
+    for (let user of this.state.usersFromDb.users) {
+      if (user.username === username) {
+        return false
+      } 
+    }
+    return true
+  
+  }
+
+  addNewUser = (user) => {
+    axios({
+      method: "post",
+      url: "/api/newuser",
+      params: {
+          username: user
+      }
+    });
+  }
+
+  endGame = (user) => {
+    console.log(user);
+    axios({
+      method: "post",
+      url: "/api/endgame",
+      params: {
+          username: user.username,
+          experience: user.experience_points
+      }
+  });
+  }
+
   chooseSpell = (spell) => {
-    this.setState({currentSpell: spell})
+    this.setState({myCurrentSpell: spell})
   }
 
   chooseWizard = (wizard) => {
@@ -54,33 +128,6 @@ class App extends Component {
     this.setState({notifications: this.state.notifications.concat(`${user} has cast ${spell}.`)})
   }
 
-  updateCurrentUser = () => {
-    if (this.state.currentUser.username.length > 0 && this.state.currentUser.id === 0) {
-      let allUsers = this.state.usersFromDb.users;
-      for (let userObject of allUsers) {
-        if (userObject.username === this.state.currentUser.username) {
-          this.setState({ currentUser: userObject });
-        };
-      };
-    };
-  }
-  
-  newUser = (user) => {
-    console.log(user);
-    this.fetchData()
-    .then(([{ data: { wizards: { wizards } } }, { data: { spells: { spells } } }]) => {
-      if (this.checkIfUserExists(user)) {
-        console.log("It;s true");
-        this.addNewUser(user);
-      };
-      this.setState({
-        wizards, spells, currentUser: { username: user, id: 0}
-      }, () => {
-        this.fetchUsers();
-      })
-    }).catch(console.error)
-  }
-  
   fetchSpells() {
     return axios.get('/api/spells')
   }
@@ -114,36 +161,13 @@ class App extends Component {
     return Promise.all([this.fetchWizards(), this.fetchSpells()]);
   }
 
-  addNewUser = (user) => {
-    axios({
-      method: "post",
-      url: "/api/newuser",
-      params: {
-          username: user
-      }
-    });
-  }
-
-  endGame = (user) => {
-    console.log(user);
-    axios({
-      method: "post",
-      url: "/api/endgame",
-      params: {
-          username: user.username,
-          experience: user.experience_points
-      }
-  });
-  }
-  
   render() {
     this.updateCurrentUser();
-
     return (
       <BrowserRouter>
         <div>
           <Navigation />
-          <Route exact path='/'render={(props) => <Login {...props} newUser={this.newUser} state={this.state} loadDb={this.fetchData} checkIfUserExists={this.checkIfUserExists} addNewUser={this.addNewUser}/>} />
+          <Route exact path='/'render={(props) => <Login {...props} newUser={this.newUser} state={this.state} loadDb={this.fetchData}/>} />
           <Route path='/game'render={(props) => <Game {...props} chooseSpell={this.chooseSpell} newNotification={this.newNotification} state={this.state} endGame={this.endGame}/>}/>
           <Route path='/instructions' component={Instructions}/>
           <Route path='/setup'render={(props) => <Setup {...props} state={this.state} chooseWizard={this.chooseWizard}/>}/>

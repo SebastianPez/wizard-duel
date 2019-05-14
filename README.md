@@ -1,33 +1,38 @@
-# React + Express No-Fluff Boilerplate
+# Wizard Duels
+A player vs player, 90's style, pixel art game for the Harry Potter fans out there! SAP built with React, node.js, express, socket.io, and styled with css.
 
-A boilerplate project for anyone interested in making a project that uses React and Express.
+Contributors: @ronan-f, @SebastianPez
 
-This repository is a bootleg of @NimaBoscarino's [React Rails Boilerplate](https://github.com/NimaBoscarino/react-rails-boilerplate). It uses the same React app, but replaces the Rails server with an Express server.
 
-Note! This boilerplate has _no fluff_! That means that there's nothing set up for you to do authentication stuff, there's no Redux stuff, and there's no React Router stuff. On the Express end, there is no session storage or database connection.
 
-The main important bit is that the React project has `proxy` set to `localhost:8080` in the `package.json` file, and that the Express app listens to port 8080 in `server.js`. Take a look!
+### **Shout-out**
+-----------------
+We started out with a boilerplate from @garrettgsb's [react-express-boilerplate](https://github.com/garrettgsb/react-express-boilerplate), which is a bootleg of @NimaBoscarino's [React Rails Boilerplate](https://github.com/NimaBoscarino/react-rails-boilerplate). We at Wizards Duel greatly appreciate their jump off for this project. 🙌
 
-## Running the projects
 
-You need **TWO** terminals for this.
+### Running Wizards Duels
+-------------------------
+You need **Three** terminals for this.
+1. In one terminal, `cd` into `react-front-end`. Run `npm install` or `yarn` to install the dependencies. Then run `npm start` or `yarn start`, and go to `localhost:3000` in your browser.
+2. In the other terminal, `cd` into `express-back-end`. Run `npm install` or `yarn` to install the dependencies, then `npm start` or `yarn start` to launch the server.
+3. In the last terminal, `cd` into `socket-server`. Run `npm install` or `yarn` to install the dependencies, then `npm start` to launch the socket server.
 
-In one terminal, `cd` into `react-front-end`. Run `npm install` or `yarn` to install the dependencies. Then run `npm start` or `yarn start`, and go to `localhost:3000` in your browser.
+In the browser, you will find dancing Dumbledore awaiting your name for entrance to a Duel.
+If this doesn't work, please message me (@kcdporter).
 
-In the other terminal, `cd` into `express-back-end`. Run `npm install` or `yarn` to install the dependencies, then `npm start` or `yarn start` to launch the server.
 
-In the browser, you can click on the button and see the data get loaded.
+### A quick change for local gameplay
+--------------
+Wizard duels is only hosted locally, which means this repo will need to be cloned and downloaded by one player. This player will have to open up `react-front-end/src/Game.js` and replace the `this.socket = socketIOClient('http://localhost:5000/')` (on line 34) with `this.socket = socketIOClient('http://<b>Your Local Ip </b>:5000/');`. This allows for a second user to connect from your wifi to the gameplay! 🤗
 
-If this doesn't work, please message me!
+Please note that this game is a fan made project, and not associated with Warner Bros, and is a final project created at Lighthouse Labs in 2 weeks. There are definitly bugs, and we will fix them in time.
 
-## Next steps
 
-From here, you can start working on your project!
+### Second Player Connection
+-------
+Your friend (or foe, who are we to judge?) will have to type `http://<b>Your Local Ip </b>:3000` into their search engine in order to connect to the duel.
 
-As soon as the dependencies are installed, your Express server can serve JSON and static assets (like images) in response to API calls from the React app. You can get started on developing your React app, routing plan, etc. right away! Any request that isn't handled by React is passed on to the Express server. That means that you can call a route like `/api/users` from React using `fetch`, `axios`, or something else, and Express will receive it as though they originated from the same app. For routing, best practice is to namespace all of your data routes to `/api`, so that they don't clash with other routing schemes, like React Router.
 
-At some point, you'll likely want to install and configure a database driver for Postgres or MongoDB-- Refer to past projects for hints on how to do this!
-
-## Contact
-
-Please contact me on Slack (@garrettgsb) or Nima at `nima@lighthouselabs.com` if you have any questions or requests, or post an issue to this repo.
+### Will there be more?
+-----
+There are plans in the works to add more characters and spells. If you have someone you want to see, shoot me a message 😊
